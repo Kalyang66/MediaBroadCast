@@ -9,19 +9,44 @@
     <script defer src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>
 
     <title>HLS Video Player</title>
+    <style>
+        /* General body styling */
+        body {
+            margin: 0;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+        /* Video container to center video only */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh; /* Adjust height as needed to center within viewport */
+        }
+
+        /* Center the video within the container */
+        #my-video {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <video 
-        id="my-video" 
-        class="video-js"
-        controls
-        preload="auto"
-        width="640"
-        height="264"
-        data-setup='{}'>
-        <source src="https://sample.vodobox.net/skate_phantom_flex_4k/skate_phantom_flex_4k.m3u8" type="application/x-mpegURL">
-        <!-- Unsure if we even need a DASH player component, seems most browers already support HLS and I can't figure out the syntax for DASH -->
-        <!--<source src="https://live-hls-abr-cdn.livepush.io/live/bigbuckbunnyclip/index.mpd" type="application/DASH">-->
-      </video>
+    <h2 style="font-size: 40px;">TV Livestream</h2>
+    <p>This is our livestream!</p>
+
+    <!-- Container for centering the video only -->
+    <div class="video-container">
+        <video 
+            id="my-video" 
+            class="video-js"
+            controls
+            preload="auto"
+            width="640"
+            height="264"
+            data-setup='{}'>
+            <source src="https://sample.vodobox.net/skate_phantom_flex_4k/skate_phantom_flex_4k.m3u8" type="application/x-mpegURL">
+        </video>
+    </div>
 </body>
 </html>
